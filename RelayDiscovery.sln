@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RelayDiscovery", "RelayDiscovery\RelayDiscovery.csproj", "{AEE983F5-9EB2-42E7-9D22-8B502EC3E90B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEE983F5-9EB2-42E7-9D22-8B502EC3E90B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEE983F5-9EB2-42E7-9D22-8B502EC3E90B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEE983F5-9EB2-42E7-9D22-8B502EC3E90B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEE983F5-9EB2-42E7-9D22-8B502EC3E90B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F05BF726-186D-4F4B-A91F-B69B7622CEF0}
+	EndGlobalSection
+EndGlobal
