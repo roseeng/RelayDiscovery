@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RelayDiscovery
 {
-    public class GetRelayResult
+    public class RelaysResult
     {
         [JsonPropertyName("relays")]
         public IEnumerable<Relay> Relays { get; set; }

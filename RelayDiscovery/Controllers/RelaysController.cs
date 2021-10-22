@@ -17,7 +17,7 @@ namespace RelayDiscovery.Controllers
         private static readonly HttpClient client = new HttpClient();
 
         [HttpGet]
-        public IEnumerable<Relay> Get()
+        public RelaysResult Get()
         {
             return GetRelays().ConfigureAwait(false).GetAwaiter().GetResult();
             /*
@@ -29,21 +29,21 @@ namespace RelayDiscovery.Controllers
             }; */
         }
 
-        private static async Task<IEnumerable<Relay>> GetRelays()
+        private static async Task<RelaysResult> GetRelays()
         {
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("User-Agent", "Relay filter");
 
             var stringData = await client.GetStringAsync("https://relays.syncthing.net/endpoint");
-            var result = JsonSerializer.Deserialize<GetRelayResult>(stringData);
+            var result = JsonSerializer.Deserialize<RelaysResult>(stringData);
             //return result.Relays;
 
             // Filter & Sort
 //            var filteredResult = result.Relays.Where(r => r.Location?.Continent == "EU" && PortFromUrl(r.Url) == 443).OrderByDescending(r => r.Stats?.UptimeSeconds).ToList();
             var filteredResult = result.Relays.Where(r => r.Location?.Continent == "EU" && PortFromUrl(r.Url) == 443).OrderByDescending(r => r.Stats?.Kbps10s1m5m15m30m60m.Last()).ToList();
 
-            return filteredResult;
+            return new RelaysResult() { Relays = filteredResult };
         }
 
         private static int PortFromUrl(string url)
