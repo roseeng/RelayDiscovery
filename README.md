@@ -1,5 +1,5 @@
 # RelayDiscovery
-A Relay Pool api server that filters tha data from relays.syncthing.net
+A Relay Pool api server that filters the data from relays.syncthing.net
 
 ## Background
 I have a network of clients that often are behind different firewalls, and I have been having perfomance problems that I, 
