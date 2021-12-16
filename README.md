@@ -13,4 +13,5 @@ This is a simple webapi that on each request to /relays fetches the data from re
 (and atm also those that are geographically local to me), sorts them by transfer speed (don't know it this makes any difference, but anyway)
 and returns the result
 
-Then I select "dynamic+<webapi address>" as Listen Address in my syncthing clients.
+Then I select "dynamic+\<webapi address\>" as Listen Address in my syncthing clients.
+I am hosting an instance of this at https://relaydiscovery.azurewebsites.net/relays for the time being.
