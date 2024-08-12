@@ -114,4 +114,5 @@ namespace RelayDiscovery
         [JsonPropertyName("options")]
         public Options Options { get; set; }
     }
+
 }

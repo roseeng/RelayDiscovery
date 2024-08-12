@@ -35,13 +35,14 @@ namespace RelayDiscovery.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("User-Agent", "Relay filter");
 
-            var stringData = await client.GetStringAsync("https://relays.syncthing.net/endpoint");
+            var stringData = await client.GetStringAsync("https://relays.syncthing.net/endpoint/full");
             var result = JsonSerializer.Deserialize<RelaysResult>(stringData);
-            //return result.Relays;
 
             // Filter & Sort
-//            var filteredResult = result.Relays.Where(r => r.Location?.Continent == "EU" && PortFromUrl(r.Url) == 443).OrderByDescending(r => r.Stats?.UptimeSeconds).ToList();
-            var filteredResult = result.Relays.Where(r => r.Location?.Continent == "EU" && PortFromUrl(r.Url) == 443).OrderByDescending(r => r.Stats?.Kbps10s1m5m15m30m60m.Last()).ToList();
+            var filteredResult = result.Relays.Where(r => r.Location?.Continent == "EU" && PortFromUrl(r.Url) == 443)
+                                    .OrderByDescending(r => r.Stats?.Kbps10s1m5m15m30m60m.Last())
+                                    .Select(r => new Relay() { Url = r.Url })
+                                    .ToList();
 
             return new RelaysResult() { Relays = filteredResult };
         }
