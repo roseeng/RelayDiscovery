@@ -58,10 +58,10 @@ namespace RelayDiscovery
         public int MessageTimeout { get; set; }
 
         [JsonPropertyName("per-session-rate")]
-        public int PerSessionRate { get; set; }
+        public long PerSessionRate { get; set; }
 
         [JsonPropertyName("global-rate")]
-        public int GlobalRate { get; set; }
+        public long GlobalRate { get; set; }
 
         [JsonPropertyName("pools")]
         public List<string> Pools { get; set; }
