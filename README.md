@@ -15,4 +15,4 @@ and returns the result
 
 Then I select "dynamic+\<webapi address\>" as Listen Address in my syncthing clients.
 
-I am hosting an instance of this at https://relaydiscovery.azurewebsites.net/relays for the time being.
+I am hosting an instance of this at ~~https://relaydiscovery.azurewebsites.net/relays~~ https://relaydiscovery20240812160240.azurewebsites.net/relays for the time being.
